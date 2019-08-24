@@ -1,12 +1,30 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React, { useState } from "raect";
+import "./index.css";
+import logo from "./logo.svg";
+import "./App.css";
+import TodoClass from "./TodoClass";
+import TodoFunction from "./TodoFunction";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+class App extends React.Component {
+  render() {
+    return (
+      <div className="App">
+        <img
+          src={logo}
+          className="App-logo"
+          alt="logo"
+          onClick={() => console.log("hi")}
+        />
+        <header className="App-header">
+          <h1>Ants Talk</h1>
+          <div className="container">
+            <TodoClass />
+            <TodoFunction />
+          </div>
+        </header>
+      </div>
+    );
+  }
+}
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+React.render(<App />, document.getElementById("root"));
